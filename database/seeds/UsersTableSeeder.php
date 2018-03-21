@@ -25,7 +25,7 @@
                 $model = new \App\User();
                 $model->name = $faker->firstName;
                 $model->email = $faker->email;
-                $model->email = Hash::make('123456');
+                $model->password = Hash::make('123456');
                 $model->save();
 
             }

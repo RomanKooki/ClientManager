@@ -20,14 +20,14 @@ class CreateCompanyProfileTable extends Migration
      */
     public function up()
     {
-        Schema::create('companies_profile', function (Blueprint $table) {
+        Schema::create('company_profiles', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('company_id');
             $table->string('address');
             $table->string('contact');
             $table->string('email_address');
             $table->string('image_url');
-            $table->integer('is_active');
+            $table->integer('is_active')->default(1);
             $table->timestamps();
         });
     }
@@ -39,6 +39,6 @@ class CreateCompanyProfileTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('companies_profile');
+        Schema::dropIfExists('company_profiles');
     }
 }
