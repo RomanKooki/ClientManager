@@ -1,4 +1,11 @@
 <?php
+    /**
+     * ClientManager.
+     *
+     * @project ClientManager
+     * @description
+     * @author Wayne Brummer
+     */
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;

@@ -1,4 +1,12 @@
 <?php
+    /**
+     * ClientManager.
+     *
+     * @project ClientManager
+     * @description
+     * @author Wayne Brummer
+     */
+
 
 use Illuminate\Database\Seeder;
 

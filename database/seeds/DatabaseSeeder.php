@@ -1,4 +1,11 @@
 <?php
+    /**
+     * ClientManager.
+     *
+     * @project ClientManager
+     * @description
+     * @author Wayne Brummer
+     */
 
 use Illuminate\Database\Seeder;
 
@@ -13,6 +20,8 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
          $this->call(CompanyTableSeeder::class);
+         $this->call(UsersTableSeeder::class);
          $this->call(CompanyProfileTableSeeder::class);
+         $this->call(UsersProfileTableSeeder::class);
     }
 }
