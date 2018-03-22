@@ -9,7 +9,7 @@
  * @author Wayne Brummer <wayne@curo.co.za>
  */
 
-namespace App\Http\Controllers\UserAuth;
+namespace App\Http\Controllers\AdminAuth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;

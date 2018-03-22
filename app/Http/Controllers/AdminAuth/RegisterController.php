@@ -9,8 +9,9 @@
  * @author Wayne Brummer <wayne@curo.co.za>
  */
 
-namespace App\Http\Controllers\UserAuth;
+namespace App\Http\Controllers\AdminAuth;
 
+use App\Admin;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -37,7 +38,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin/home';
 
     /**
      * Create a new controller instance.
@@ -68,11 +69,11 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return Admin|User|\Illuminate\Database\Eloquent\Model
      */
     protected function create(array $data)
     {
-        return User::create([
+        return Admin::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
