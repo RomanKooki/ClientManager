@@ -13992,6 +13992,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  * @author Wayne Brummer
  */
 
+/*
+ * ClientManager
+ *
+ * @file app.js
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
+
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -14010,10 +14018,10 @@ window.Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]);
 
 
 var routes = [{
-    path: '/',
-    components: {
-        companiesIndex: __WEBPACK_IMPORTED_MODULE_1__components_companies_CompaniesIndex_vue___default.a
-    }
+  path: '/',
+  components: {
+    companiesIndex: __WEBPACK_IMPORTED_MODULE_1__components_companies_CompaniesIndex_vue___default.a
+  }
 }, { path: '/admin/companies/create', component: __WEBPACK_IMPORTED_MODULE_2__components_companies_CompaniesCreate_vue___default.a, name: 'createCompany' }, { path: '/admin/companies/edit/:id', component: __WEBPACK_IMPORTED_MODULE_3__components_companies_CompaniesEdit_vue___default.a, name: 'editCompany' }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({ routes: routes });
@@ -49884,7 +49892,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/companies/CompaniesIndex.vue"
+Component.options.__file = "resources\\assets\\js\\components\\companies\\CompaniesIndex.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -49893,9 +49901,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-64406c22", Component.options)
+    hotAPI.createRecord("data-v-34566f62", Component.options)
   } else {
-    hotAPI.reload("data-v-64406c22", Component.options)
+    hotAPI.reload("data-v-34566f62", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -49911,6 +49919,14 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -50053,7 +50069,7 @@ var render = function() {
                       },
                       [
                         _vm._v(
-                          "\n                            Edit\n                        "
+                          "\r\n                            Edit\r\n                        "
                         )
                       ]
                     ),
@@ -50071,7 +50087,7 @@ var render = function() {
                       },
                       [
                         _vm._v(
-                          "\n                            Delete\n                        "
+                          "\r\n                            Delete\r\n                        "
                         )
                       ]
                     )
@@ -50111,7 +50127,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-64406c22", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-34566f62", module.exports)
   }
 }
 
@@ -50141,7 +50157,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/companies/CompaniesCreate.vue"
+Component.options.__file = "resources\\assets\\js\\components\\companies\\CompaniesCreate.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -50150,9 +50166,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-4b8162dc", Component.options)
+    hotAPI.createRecord("data-v-070ee762", Component.options)
   } else {
-    hotAPI.reload("data-v-4b8162dc", Component.options)
+    hotAPI.reload("data-v-070ee762", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -50168,6 +50184,14 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -50423,7 +50447,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-4b8162dc", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-070ee762", module.exports)
   }
 }
 
@@ -50453,7 +50477,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/companies/CompaniesEdit.vue"
+Component.options.__file = "resources\\assets\\js\\components\\companies\\CompaniesEdit.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -50462,9 +50486,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-81e6aa2c", Component.options)
+    hotAPI.createRecord("data-v-2e95951d", Component.options)
   } else {
-    hotAPI.reload("data-v-81e6aa2c", Component.options)
+    hotAPI.reload("data-v-2e95951d", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -50480,6 +50504,14 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
