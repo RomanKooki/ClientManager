@@ -4,7 +4,7 @@
 @stop
 
 @section('footer')
-    {!! HTML::script('/js/admin/table.js') !!}
+    <script type="text/javascript" src='/js/admin/table.js'></script>
 @stop
 
 @section('content')
@@ -80,13 +80,8 @@
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
 
-                                                <a class="dropdown-item" href="javascript: info_window('/admin/user/view/{!!$record->id!!}');">
+                                                <a class="dropdown-item" href="javascript: info_window('{{route('admin.users.show',$record->id)}}');">
                                                     <i class="fa fa-search "></i> View
-                                                </a>
-
-                                                <a
-                                                   href="{{ route('admin.users.show',$record->id) }}">
-                                                    View
                                                 </a>
                                                 <a class="dropdown-item"
                                                    href="{{ route('admin.users.edit',$record->id) }}">

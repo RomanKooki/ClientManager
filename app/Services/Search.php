@@ -7,6 +7,22 @@
  * @author Wayne Brummer
  */
 
+/**
+ * ClientManager
+ *
+ * @file Search.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
+
+/**
+ * ClientManager
+ *
+ * @file Search.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
+
 namespace App\Services;
 
 use DB;

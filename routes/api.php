@@ -1,4 +1,11 @@
 <?php
+/**
+ * ClientManager
+ *
+ * @file api.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
 
 use Illuminate\Http\Request;
 
@@ -13,6 +20,6 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['prefix' => '/v1', 'as' => 'admin.'], function () {
+    Route::resource('companies', 'Api\CompaniesController', ['except' => ['create', 'edit']]);
 });

@@ -10,8 +10,6 @@
 
     <title>{{ config('app.name', 'Client Manager') }} @if(isset($title))- {{$title}} @endif</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -58,7 +56,7 @@
                             <li><a class="nav-link" href="{{ route('admin.login') }}">{{ __('Login') }}</a></li>
                         @else
                             <li><a class="nav-link" href="{{ route('admin.users.index') }}">{{ __('User') }}</a></li>
-{{--                            <li><a class="nav-link" href="{{ route('admin.company.index') }}">{{ __('Company') }}</a></li>--}}
+                            <li><a class="nav-link" href="{{ route('admin.companies.index') }}">{{ __('Company') }}</a></li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::guard('admin')->user()->name }} <span class="caret"></span>
@@ -89,5 +87,10 @@
 
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+
 </body>
 </html>

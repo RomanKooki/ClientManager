@@ -23,6 +23,14 @@
  * @author Wayne Brummer
  */
 
+/**
+ * ClientManager
+ *
+ * @file AuthRoutes.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
+
     /**
      * Created by PhpStorm.
      * User: wayne
@@ -90,7 +98,7 @@
                         Route::resource('users', 'Admin\UserController');
 
                         Route::post('users', 'Admin\UserController@index')->name('users.index');
-                        Route::resource('companies', 'Admin\CompanyController');
+                        Route::get('companies', 'Admin\CompaniesController@index')->name('companies.index');
                     });
 
                 });

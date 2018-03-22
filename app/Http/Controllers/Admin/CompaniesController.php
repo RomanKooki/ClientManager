@@ -2,7 +2,7 @@
 /**
  * ClientManager
  *
- * @file CompanyController.php
+ * @file CompaniesController.php
  * @project ClientManager
  * @author Wayne Brummer
  */
@@ -15,6 +15,7 @@
  * @author Wayne Brummer
  */
 
+
     namespace App\Http\Controllers\Admin;
 
     use App\Http\Controllers\Controller;
@@ -22,7 +23,7 @@
     use App\User;
     use Illuminate\Http\Request;
 
-    class CompanyController extends Controller
+    class CompaniesController extends Controller
     {
         /**
          * Display a listing of the resource.
