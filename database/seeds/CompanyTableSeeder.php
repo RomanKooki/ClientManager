@@ -1,4 +1,12 @@
 <?php
+/**
+ * ClientManager
+ *
+ * @file CompanyTableSeeder.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
+
     /**
      * ClientManager.
      *
@@ -26,6 +34,10 @@ class CompanyTableSeeder extends Seeder
 
             $model = new Company();
             $model->name = $faker->company. '-company';
+            $model->address = $faker->address;
+            $model->contact = $faker->phoneNumber;
+            $model->email_address = $faker->companyEmail;
+            $model->image_url = $faker->imageUrl(100,100);
             $model->save();
 
         }

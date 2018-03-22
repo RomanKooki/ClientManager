@@ -1,4 +1,12 @@
 <?php
+/**
+ * ClientManager
+ *
+ * @file RedirectIfNotUser.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
+
     /**
      * ClientManager.
      *
@@ -28,7 +36,9 @@ class RedirectIfNotUser
             return redirect('user/login')
                 ->with('error', 'You need to log in first!');
         }
-
+        if (Auth::guard($guard)->check()) {
+            return redirect('user.home');
+        }
 	    return $next($request);
 	}
 }

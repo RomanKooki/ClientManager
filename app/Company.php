@@ -1,4 +1,11 @@
 <?php
+/**
+ * ClientManager
+ *
+ * @file Company.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
 
 namespace App;
 
@@ -15,7 +22,6 @@ class Company extends Model
      * @var array
      */
     protected $fillable = [
-        'company_id',
         'address',
         'contact',
         'image_url',

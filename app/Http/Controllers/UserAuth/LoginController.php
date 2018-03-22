@@ -7,6 +7,14 @@
  * @author Wayne Brummer
  */
 
+/**
+ * ClientManager
+ *
+ * @file LoginController.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
+
 namespace App\Http\Controllers\UserAuth;
 
 use App\Http\Controllers\Controller;
@@ -79,7 +87,7 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
-        return view('auth.login');
+        return view('auth.user.login');
     }
 
     /**
@@ -241,7 +249,7 @@ class LoginController extends Controller
      */
     protected function guard()
     {
-        return Auth::guard();
+        return Auth::guard('user');
     }
 
 }

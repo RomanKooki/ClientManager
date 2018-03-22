@@ -1,4 +1,12 @@
 <?php
+/**
+ * ClientManager
+ *
+ * @file 2014_10_12_000000_create_users_table.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
+
     /**
      * ClientManager.
      *
@@ -25,6 +33,11 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('address');
+            $table->string('contact');
+            $table->string('id_number');
+            $table->string('image_url');
+            $table->integer('is_active')->default(1);
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();

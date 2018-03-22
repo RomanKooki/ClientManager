@@ -1,6 +1,13 @@
 <?php
+/**
+ * ClientManager
+ *
+ * @file User.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
 
-    namespace App;
+namespace App;
 
     use Illuminate\Notifications\Notifiable;
     use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -18,6 +25,11 @@
             'name',
             'email',
             'password',
+            'address',
+            'contact',
+            'id_number',
+            'image_url',
+            'is_active',
         ];
 
         /**
@@ -29,4 +41,14 @@
             'password',
             'remember_token',
         ];
+
+        /**
+         * User will have many companies
+         *
+         * @return \Illuminate\Database\Eloquent\Relations\HasMany
+         */
+        public function companies()
+        {
+            return $this->hasMany('App\UserCompany');
+        }
     }

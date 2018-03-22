@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Dashboard Admin</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <a href="{{route('admin.users.index')}}" class="btn-block"> List All Clients  </a>
+                    <a href="{{route('admin.companies.index')}}" class="btn-block"> List All Companies  </a>
                 </div>
             </div>
         </div>

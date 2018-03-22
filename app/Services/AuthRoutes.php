@@ -15,6 +15,14 @@
  * @author Wayne Brummer
  */
 
+/**
+ * ClientManager
+ *
+ * @file AuthRoutes.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
+
     /**
      * Created by PhpStorm.
      * User: wayne
@@ -42,25 +50,51 @@
                 Route::name('user.')->group(function () {
 
                     //Register section
-                    Route::get('/register', 'UserAuth\RegisterController@showRegistrationForm');
-                    Route::post('/register', 'UserAuth\RegisterController@register');
+                    Route::get('/register', 'UserAuth\RegisterController@showRegistrationForm')
+                        ->name('register');
+                    Route::post('/register', 'UserAuth\RegisterController@register')
+                        ->name('register');
 
                     //Login Section
-                    Route::get('/login', 'UserAuth\LoginController@showLoginForm');
-                    Route::post('/login', 'UserAuth\LoginController@login');
-                    Route::get('logout', 'MemberAuth\AuthController@handleLogout');
+                    Route::get('/login', 'UserAuth\LoginController@showLoginForm')
+                        ->name('login');
+                    Route::post('/login', 'UserAuth\LoginController@login')
+                        ->name('login');
+                    Route::post('logout', 'UserAuth\LoginController@handleLogout')
+                        ->name('logout');
 
-                    Route::get('forgot', 'MemberAuth\AuthController@showForgot');
-                    Route::get('reset/{guid}', 'MemberAuth\AuthController@showReset');
+                    Route::get('forgot', 'UserAuth\ForgotPasswordController@showForgot')
+                        ->name('password.request');
+//                    Route::get('reset/{guid}', 'UserAuth\ResetPasswordController@showReset');
                 });
             });
         }
 
         public static function AdminRoutes()
         {
-            Route::get('admin/login','AdminAuth\AuthController@showLogin');
-            Route::post('admin/login','AdminAuth\AuthController@handleLogin');
-            Route::get('admin/logout','AdminAuth\AuthController@handleLogout');
+
+            Route::group(['prefix' => 'admin'], function () {
+                Route::name('admin.')->group(function () {
+                    //Login Section
+                    Route::get('/login', 'AdminAuth\LoginController@showLoginForm')
+                        ->name('login');
+                    Route::post('/login', 'AdminAuth\LoginController@login')
+                        ->name('login');
+                    Route::post('logout', 'AdminAuth\LoginController@handleLogout')
+                        ->name('logout');
+
+                    Route::middleware('admin')->group(function () {
+                        Route::get('home', 'Admin\PageController@index')
+                            ->name('home');
+
+                        Route::resource('users', 'Admin\UserController');
+
+                        Route::post('users', 'Admin\UserController@index')->name('users.index');
+                        Route::resource('companies', 'Admin\CompanyController');
+                    });
+
+                });
+            });
         }
 
     }

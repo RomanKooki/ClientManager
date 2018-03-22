@@ -7,6 +7,14 @@
  * @author Wayne Brummer
  */
 
+/**
+ * ClientManager
+ *
+ * @file RegisterController.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
+
 namespace App\Http\Controllers\UserAuth;
 
 use App\User;
@@ -105,7 +113,7 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
-        return view('auth.register');
+        return view('auth.user.register');
     }
 
     /**
