@@ -1,11 +1,17 @@
 <?php
 /**
- * ClientManager is licenced under Curo Digital.
+ * ClientManager
  *
  * @file ForgotPasswordController.php
  * @project ClientManager
- * @description
- * @copyright Curo Digital @today.year
+ * @author Wayne Brummer
+ */
+
+/**
+ * ClientManager
+ *
+ * @file ForgotPasswordController.php
+ * @project ClientManager
  * @author Wayne Brummer <wayne@curo.co.za>
  */
 

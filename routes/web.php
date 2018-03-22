@@ -1,4 +1,11 @@
 <?php
+/**
+ * ClientManager
+ *
+ * @file web.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +22,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+\App\Services\AuthRoutes::UserRoutes();
+\App\Services\AuthRoutes::AdminRoutes();
 
 Route::get('/home', 'HomeController@index')->name('home');

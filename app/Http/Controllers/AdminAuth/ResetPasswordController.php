@@ -1,15 +1,21 @@
 <?php
 /**
- * ClientManager is licenced under Curo Digital.
+ * ClientManager
  *
  * @file ResetPasswordController.php
  * @project ClientManager
- * @description
- * @copyright Curo Digital @today.year
- * @author Wayne Brummer <wayne@curo.co.za>
+ * @author Wayne Brummer
  */
 
-namespace App\Http\Controllers\UserAuth;
+/**
+ * ClientManager
+ *
+ * @file ResetPasswordController.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
+
+namespace App\Http\Controllers\AdminAuth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
@@ -34,7 +40,7 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin/home';
 
     /**
      * Create a new controller instance.

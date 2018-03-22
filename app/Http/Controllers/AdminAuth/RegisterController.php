@@ -1,12 +1,34 @@
 <?php
 /**
- * ClientManager is licenced under Curo Digital.
+ * ClientManager
  *
  * @file RegisterController.php
  * @project ClientManager
- * @description
- * @copyright Curo Digital @today.year
- * @author Wayne Brummer <wayne@curo.co.za>
+ * @author Wayne Brummer
+ */
+
+/**
+ * ClientManager
+ *
+ * @file RegisterController.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
+
+/**
+ * ClientManager
+ *
+ * @file RegisterController.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
+
+/**
+ * ClientManager
+ *
+ * @file RegisterController.php
+ * @project ClientManager
+ * @author Wayne Brummer
  */
 
 namespace App\Http\Controllers\AdminAuth;
