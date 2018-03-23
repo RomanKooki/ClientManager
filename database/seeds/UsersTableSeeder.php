@@ -7,6 +7,14 @@
  * @author Wayne Brummer
  */
 
+/**
+ * ClientManager
+ *
+ * @file UsersTableSeeder.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
+
     /**
      * ClientManager.
      *
@@ -35,6 +43,7 @@
                 $model->email = $faker->email;
                 $model->password = Hash::make('123456');
                 $model->address = $faker->address;
+                $model->age = $faker->numberBetween(18, 55);
                 $model->id_number = 1234567 + $userID;
                 $model->contact = $faker->phoneNumber;
                 $model->image_url = $faker->imageUrl(100, 100);

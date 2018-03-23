@@ -7,6 +7,14 @@
  * @author Wayne Brummer
  */
 
+/**
+ * ClientManager
+ *
+ * @file Company.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
+
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
@@ -22,10 +30,8 @@ class Company extends Model
      * @var array
      */
     protected $fillable = [
-        'address',
-        'contact',
-        'image_url',
-        'is_active',
+        'user_id',
+        'company_id',
     ];
 
     /**

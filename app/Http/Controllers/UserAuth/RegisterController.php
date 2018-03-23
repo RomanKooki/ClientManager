@@ -15,6 +15,14 @@
  * @author Wayne Brummer
  */
 
+/**
+ * ClientManager
+ *
+ * @file RegisterController.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
+
 namespace App\Http\Controllers\UserAuth;
 
 use App\User;
@@ -66,6 +74,10 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
+            'address' => 'required|string|max:255',
+            'age' => 'required|string|max:255',
+            'contact' => 'required|string|max:255',
+            'id_number' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
@@ -81,6 +93,10 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'address' => $data['address'],
+            'age' => $data['age'],
+            'contact' => $data['contact'],
+            'id_number' => $data['id_number'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);

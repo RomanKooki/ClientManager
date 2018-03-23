@@ -7,6 +7,14 @@
  * @author Wayne Brummer
  */
 
+/**
+ * ClientManager
+ *
+ * @file User.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
+
 namespace App;
 
     use Illuminate\Notifications\Notifiable;
@@ -28,6 +36,7 @@ namespace App;
             'address',
             'contact',
             'id_number',
+            'age',
             'image_url',
             'is_active',
         ];

@@ -15,9 +15,18 @@
  * @author Wayne Brummer
  */
 
+/**
+ * ClientManager
+ *
+ * @file CompaniesController.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
+
 namespace App\Http\Controllers\Api;
 
 use App\Company;
+use App\UserCompany;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 

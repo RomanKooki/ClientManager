@@ -7,6 +7,14 @@
  * @author Wayne Brummer
  */
 
+/**
+ * ClientManager
+ *
+ * @file UserService.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
+
     /**
      * ClientManager
      *
@@ -18,8 +26,10 @@
     namespace App\Services\Admin;
 
 
+    use App\Services\FileService;
     use App\Services\Search;
     use App\User;
+    use App\UserCompany;
     use Auth;
 
     class UserService
@@ -58,7 +68,30 @@
          */
         public function insertDB($request)
         {
-            User::create($request->all());
+
+            $input = $request->all();
+
+            $data = [
+                'name' => $input['name'],
+                'address' => $input['address'],
+                'id_number' => $input['id_number'],
+                'contact' => $input['contact'],
+                'age' => $input['age'],
+                'is_active' => (isset($input['is_active'])) ? 1 : 0 ,
+                'email' => $input['email'],
+                'updated_at' => date('Y-m-d H:i:s'),
+            ];
+
+            if($request->has('image_url'))
+            {
+                $data['image_url'] = FileService::uploadFile($request, 'image_url', 'users');
+            }
+
+            (new User)->where('id' , $id )->update( $data );
+
+            $this->completeCompanyLinking($request,$id);
+
+
         }
 
         public function getRecord($id = 0)
@@ -94,6 +127,10 @@
 
         }
 
+        /**
+         * @param $user
+         * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|string
+         */
         public function getSummary($user)
         {
 
@@ -107,4 +144,78 @@
 
             }
         }
+
+        /**
+         * Updated the user and does the linking
+         *
+         * @param $id
+         * @param $request
+         */
+        public function updateDB($id, $request)
+        {
+            $input = $request->all();
+
+            $data = [
+                'name' => $input['name'],
+                'address' => $input['address'],
+                'id_number' => $input['id_number'],
+                'contact' => $input['contact'],
+                'age' => $input['age'],
+                'is_active' => (isset($input['is_active'])) ? 1 : 0 ,
+                'email' => $input['email'],
+                'updated_at' => date('Y-m-d H:i:s'),
+            ];
+
+            if($request->has('image_url'))
+            {
+                $data['image_url'] = FileService::uploadFile($request, 'image_url', 'users');
+            }
+
+            (new User)->where('id' , $id )->update( $data );
+
+            $this->completeCompanyLinking($request,$id);
+        }
+
+        /**
+         * Does the linking between user and the company
+         *
+         * @param $request
+         * @param $id
+         */
+        private function completeCompanyLinking($request, $id)
+        {
+            if($request->has('company_list'))
+            {
+                $this->removeLinking($id);
+
+                if (is_array($request->get('company_list')))
+                {
+
+                    foreach ($request->get('company_list') as $item)
+                    {
+                        $links = (new UserCompany);
+                        $links->user_id = $id;
+                        $links->company_id = $item;
+                        $links->save();
+                    }
+                }
+            }
+        }
+
+        /**
+         * Removes the links between companies and users.
+         *
+         * @param $userId
+         */
+        private function removeLinking($userId)
+        {
+
+            try {
+                (new UserCompany)
+                    ->where('user_id', $userId)
+                    ->delete();
+            } catch (\Exception $e) {
+            }
+        }
+
     }

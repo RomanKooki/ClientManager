@@ -7,6 +7,14 @@
  * @author Wayne Brummer
  */
 
+/**
+ * ClientManager
+ *
+ * @file 2018_03_21_082600_create_company_table.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
+
     /**
      * ClientManager.
      *
@@ -34,6 +42,7 @@ class CreateCompanyTable extends Migration
             $table->string('address');
             $table->string('contact');
             $table->string('email_address');
+            $table->string('website');
             $table->string('image_url');
             $table->integer('is_active')->default(1);
             $table->softDeletes();

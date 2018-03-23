@@ -1,4 +1,11 @@
 <?php
+/**
+ * ClientManager
+ *
+ * @file filesystems.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
 
 return [
 
@@ -13,7 +20,7 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DRIVER', 'local'),
+    'default' => env('FILESYSTEM_DRIVER', 'public'),
 
     /*
     |--------------------------------------------------------------------------

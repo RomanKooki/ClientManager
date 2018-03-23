@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        {!! Form::model($user , ['method' => 'PATCH','route' => ['admin.users.update' , $user->id]]) !!}
+        {!! Form::model($user , ['files' => true, 'method' => 'PATCH','route' => ['admin.users.update' , $user->id]]) !!}
         @include('admin.users.form')
         {!! Form::close() !!}
     </div>

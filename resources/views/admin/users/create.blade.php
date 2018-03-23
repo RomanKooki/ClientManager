@@ -22,7 +22,7 @@
                 </div>
             </div>
 
-            {!! Form::open(['method' => 'POST','route' => ['admin.users.create']]) !!}
+            {!! Form::open(['files' => true, 'method' => 'POST','route' => ['admin.users.store']]) !!}
             @include('admin.users.form')
             {!! Form::close() !!}
 

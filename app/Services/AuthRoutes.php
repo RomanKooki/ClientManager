@@ -31,6 +31,14 @@
  * @author Wayne Brummer
  */
 
+/**
+ * ClientManager
+ *
+ * @file AuthRoutes.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
+
     /**
      * Created by PhpStorm.
      * User: wayne
@@ -74,6 +82,18 @@
                     Route::get('forgot', 'UserAuth\ForgotPasswordController@showForgot')
                         ->name('password.request');
 //                    Route::get('reset/{guid}', 'UserAuth\ResetPasswordController@showReset');
+
+                    Route::middleware('user')->group(function () {
+                        Route::get('home', 'User\PageController@index')
+                            ->name('home');
+
+                        Route::get('companies', 'User\CompaniesController@index')
+                            ->name('companies.index');
+                        Route::get('companies/link/{company_id}', 'User\CompaniesController@removeLink')
+                            ->name('user_company.remove');
+                        Route::get('companies/remove/{company_id}', 'User\CompaniesController@createLink')
+                            ->name('user_company.create');
+                    });
                 });
             });
         }
