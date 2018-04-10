@@ -20,6 +20,10 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * Class Company
+ * @package App
+ */
 class Company extends Model
 {
     use SoftDeletes;
@@ -30,8 +34,16 @@ class Company extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id',
-        'company_id',
+        'name',
+        'address',
+        'contact',
+        'email_address',
+        'website',
+        'image_url',
+        'is_active',
+        'deleted_at',
+        'created_at',
+        'updated_at',
     ];
 
     /**

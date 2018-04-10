@@ -32,7 +32,13 @@ These are the base requirements to run this system.
 
 
 ```
+ Copy .env.example file to .env
+ 
+ Change the database details.
+
  php composer install
+ 
+ php artisan key:generate
  
  php artisan migrate --seed
 ```

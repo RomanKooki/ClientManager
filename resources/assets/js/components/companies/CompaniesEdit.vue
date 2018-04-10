@@ -1,4 +1,3 @@
-
 <!--
   - ClientManager
   -
@@ -14,12 +13,69 @@
   - @project ClientManager
   - @author Wayne Brummer
   -->
+
+
+<template>
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title">
+                    Edit: {{company.name}}
+                </div>
+                <form v-on:submit="saveForm()">
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label class="control-label">Company name</label>
+                            <input type="text" v-model="company.name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label class="control-label">Company address</label>
+                            <input type="text" v-model="company.address" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label class="control-label">Company website</label>
+                            <input type="text" v-model="company.website" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label class="control-label">Company email</label>
+                            <input type="text" v-model="company.email_address" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label class="control-label">Company Image</label>
+                            <input type="text" v-model="company.image_url" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label class="control-label">Company Contact</label>
+                            <input type="text" v-model="company.contact" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <button class="btn btn-success">Edit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</template>
 
 <script>
     export default {
         mounted() {
             let app = this;
+
             let id = app.$route.params.id;
+
             app.companyId = id;
             axios.get('/api/v1/companies/' + id)
                 .then(function (resp) {
@@ -36,7 +92,9 @@
                     name: '',
                     address: '',
                     website: '',
-                    email: '',
+                    email_address: '',
+                    image_url: '',
+                    contact: '',
                 }
             }
         },

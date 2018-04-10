@@ -14,6 +14,7 @@
  * @author Wayne Brummer
  */
 
+
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -44,6 +45,6 @@ const routes = [
     {path: '/admin/companies/edit/:id', component: CompaniesEdit, name: 'editCompany'},
 ]
 
-const router = new VueRouter({ routes })
+const router = new VueRouter({routes: routes});
 
-const app = new Vue({ router }).$mount('#app')
+const app = new Vue({router}).$mount('#app')

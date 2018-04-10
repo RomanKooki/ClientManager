@@ -23,6 +23,14 @@
  * @author Wayne Brummer
  */
 
+/**
+ * ClientManager
+ *
+ * @file CompaniesController.php
+ * @project ClientManager
+ * @author Wayne Brummer
+ */
+
 namespace App\Http\Controllers\Api;
 
 use App\Company;
@@ -57,8 +65,8 @@ class CompaniesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  int $id
+     * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model
      */
     public function show($id)
     {
@@ -70,11 +78,12 @@ class CompaniesController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|\Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         $company = Company::findOrFail($id);
+
         $company->update($request->all());
 
         return $company;
