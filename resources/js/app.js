@@ -43,8 +43,8 @@ const routes = [
     },
     {path: '/admin/companies/create', component: CompaniesCreate, name: 'createCompany'},
     {path: '/admin/companies/edit/:id', component: CompaniesEdit, name: 'editCompany'},
-]
+];
 
 const router = new VueRouter({routes: routes});
 
-const app = new Vue({router}).$mount('#app')
+const app = new Vue({router}).$mount('#app');

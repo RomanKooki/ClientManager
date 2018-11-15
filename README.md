@@ -1,6 +1,6 @@
 # ClientManager
 
-This is a client manager system for Qlink practical test.
+This is a client manager system test.
 
 It contains 2 examples of CRUD.
 
@@ -12,7 +12,7 @@ The second is a Company CRUDS which uses web services and Vue.
 
 You can start with cloning the repo.
 ````
-git clone https://github.com/RomanKooki/ClientManager.git 
+git clone https://github.com/WayneBrummer/ClientManager.git
 ````
 Then you can run NPM or don't as it is production ready.
 ````
