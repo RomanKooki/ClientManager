@@ -1,11 +1,14 @@
 <?php
 /**
- * ClientManager
+ * ClientManager.
  *
  * @file UpdateUserPost.php
  * @project ClientManager
+ *
  * @author Wayne Brummer <wayne@bru-tech.co.za>
+ *
  * @category UserAuths
+ *
  * @license WayneBrummer BruTech
  */
 
@@ -33,11 +36,11 @@ class UpdateUserPost extends FormRequest
     public function rules()
     {
         return [
-          'name' => 'required',
-          'address' => 'required',
-          'contact' => 'required',
-          'id_number' => 'required',
-          'email' => 'required',
+            'name'      => 'required',
+            'address'   => 'required',
+            'contact'   => 'required',
+            'id_number' => 'required',
+            'email'     => 'required',
         ];
     }
 }

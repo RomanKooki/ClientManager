@@ -1,9 +1,10 @@
 <?php
 /**
- * ClientManager
+ * ClientManager.
  *
  * @file RedirectIfAuthenticated.php
  * @project ClientManager
+ *
  * @author Wayne Brummer
  */
 
@@ -17,9 +18,10 @@ class RedirectIfAuthenticated
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @param  string|null  $guard
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure                 $next
+     * @param null|string              $guard
+     *
      * @return mixed
      */
     public function handle($request, Closure $next, $guard = null)

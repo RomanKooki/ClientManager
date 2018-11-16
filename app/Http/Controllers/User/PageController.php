@@ -1,25 +1,28 @@
 <?php
 /**
- * ClientManager
+ * ClientManager.
  *
  * @file PageController.php
  * @project ClientManager
+ *
  * @author Wayne Brummer
  */
 
 /**
- * ClientManager
+ * ClientManager.
  *
  * @file PageController.php
  * @project ClientManager
+ *
  * @author Wayne Brummer
  */
 
 /**
- * ClientManager
+ * ClientManager.
  *
  * @file PageController.php
  * @project ClientManager
+ *
  * @author Wayne Brummer
  */
 
@@ -27,7 +30,6 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\User;
-use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
@@ -49,9 +51,8 @@ class PageController extends Controller
      */
     public function index()
     {
+        $records['companies'] = (new User())->companies()->get();
 
-        $records['companies'] = (new User)->companies()->get();
-
-        return view('user.home', compact('record'));
+        return view('user.home', \compact('record'));
     }
 }

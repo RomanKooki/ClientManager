@@ -1,25 +1,28 @@
 <?php
 /**
- * ClientManager
+ * ClientManager.
  *
  * @file Search.php
  * @project ClientManager
+ *
  * @author Wayne Brummer
  */
 
 /**
- * ClientManager
+ * ClientManager.
  *
  * @file Search.php
  * @project ClientManager
+ *
  * @author Wayne Brummer
  */
 
 /**
- * ClientManager
+ * ClientManager.
  *
  * @file Search.php
  * @project ClientManager
+ *
  * @author Wayne Brummer
  */
 
@@ -27,88 +30,58 @@ namespace App\Services;
 
 use DB;
 
-class Search {
+class Search
+{
+    public static function buildQuery(&$query, $keywords = '', $fields = [])
+    {
+        // check if values not empty
 
-    public static function buildQuery(&$query, $keywords = '', $fields = array()) {
+        if (!empty($keywords) && !empty($fields) && \is_array($fields)) {
+            // remove special char like  / &
 
-        # check if values not empty
+            $keywords = \str_replace("'", "''", \stripslashes($keywords));
 
-        if( !empty($keywords) and !empty($fields) and is_array($fields) )
-        {
+            // turn string into array
 
-            # remove special char like  / &
+            $a_keywords = \explode(' ', \trim(\strtolower($keywords)));
 
-            $keywords = str_replace("'","''",stripslashes( $keywords) );
+            // check if array not empty
 
-            # turn string into array
+            if (\count($a_keywords) > 0) {
+                $search_like = '%' . \implode('%', $a_keywords) . '%';
 
-            $a_keywords = explode(' ', trim(strtolower($keywords)));
+                $query->where(function ($query) use ($fields, $search_like, $a_keywords) {
+                    $query->where(function ($sub_query) use ($fields, $search_like) {
+                        // loop through fields
 
-            # check if array not empty
-
-            if( count($a_keywords) > 0)
-            {
-
-                $search_like = '%'.implode('%',$a_keywords).'%';
-
-                $query->where(function($query) use ($fields, $search_like, $a_keywords)
-                {
-
-                    $query->where(function($sub_query) use ($fields, $search_like)
-                    {
-
-                        # loop through fields
-
-                        foreach( $fields AS $key => $field )
-                        {
-
-                            if(empty($key))
-                            {
-                                $sub_query->where(DB::raw("LOWER($field)"),'LIKE',DB::raw("'$search_like'"));
+                        foreach ($fields as $key => $field) {
+                            if (empty($key)) {
+                                $sub_query->where(DB::raw("LOWER(${field})"), 'LIKE', DB::raw("'${search_like}'"));
                             } else {
-                                $sub_query->orWhere(DB::raw("LOWER($field)"),'LIKE',DB::raw("'$search_like'"));
+                                $sub_query->orWhere(DB::raw("LOWER(${field})"), 'LIKE', DB::raw("'${search_like}'"));
                             }
-
                         }
-
                     });
 
-                    $query->orWhere(function($sub_query) use ($fields, $a_keywords) {
-
-                        foreach( $fields AS $key => $field ) {
-
-                            if(empty($key))
-                            {
-
-                                foreach($a_keywords AS $key2 => $keyword)
-                                {
-
-                                    if(empty($key2))
-                                    {
-                                        $sub_query->where(DB::raw("LOWER($field)"),'LIKE',DB::raw("'$keyword'"));
+                    $query->orWhere(function ($sub_query) use ($fields, $a_keywords) {
+                        foreach ($fields as $key => $field) {
+                            if (empty($key)) {
+                                foreach ($a_keywords as $key2 => $keyword) {
+                                    if (empty($key2)) {
+                                        $sub_query->where(DB::raw("LOWER(${field})"), 'LIKE', DB::raw("'${keyword}'"));
                                     } else {
-                                        $sub_query->orWhere(DB::raw("LOWER($field)"),'LIKE',DB::raw("'$keyword'"));
+                                        $sub_query->orWhere(DB::raw("LOWER(${field})"), 'LIKE', DB::raw("'${keyword}'"));
                                     }
-
                                 }
-
                             } else {
-
-                                foreach($a_keywords AS $key2 => $keyword)
-                                {
-                                    $sub_query->orWhere(DB::raw("LOWER($field)"), 'LIKE', DB::raw("'$keyword'"));
+                                foreach ($a_keywords as $key2 => $keyword) {
+                                    $sub_query->orWhere(DB::raw("LOWER(${field})"), 'LIKE', DB::raw("'${keyword}'"));
                                 }
                             }
-
                         }
-
                     });
-
                 });
             }
-
         }
-
     }
-
 }

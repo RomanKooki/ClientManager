@@ -1,11 +1,14 @@
 <?php
 /**
- * ClientManager
+ * ClientManager.
  *
  * @file RegisterController.php
  * @project ClientManager
+ *
  * @author Wayne Brummer <wayne@bru-tech.co.za>
+ *
  * @category UserAuths
+ *
  * @license WayneBrummer BruTech
  */
 
@@ -38,8 +41,6 @@ class ResetPasswordController extends Controller
 
     /**
      * Create a new controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {

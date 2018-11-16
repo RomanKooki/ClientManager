@@ -34,7 +34,7 @@ script:
   - phpcs --ignore=app/Http/Controllers/Auth,app/Http/Controllers/Controller.php app/Http/Controllers
 #  - npm run production
 #  - jshint resources/assets/js/modules/*
-  - phpcs --standard=PSR2 -n --encoding=utf-8 --extensions=php index.php
+  - phpcs --standard=PSR2 --tab-width=4 --encoding=utf-8
   - composer test
 notifications:
   email: false

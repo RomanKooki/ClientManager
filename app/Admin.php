@@ -4,14 +4,14 @@
      *
      * @project ClientManager
      * @description
+     *
      * @author Wayne Brummer
      */
 
+namespace App;
 
-    namespace App;
-
+use Illuminate\Foundation\Auth\User as Authenticatable;
     use Illuminate\Notifications\Notifiable;
-    use Illuminate\Foundation\Auth\User as Authenticatable;
 
     class Admin extends Authenticatable
     {

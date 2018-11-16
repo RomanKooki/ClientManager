@@ -1,11 +1,14 @@
 <?php
 /**
- * ClientManager
+ * ClientManager.
  *
  * @file LoginController.php
  * @project ClientManager
+ *
  * @author Wayne Brummer <wayne@bru-tech.co.za>
+ *
  * @category UserAuths
+ *
  * @license WayneBrummer BruTech
  */
 
@@ -13,7 +16,6 @@ namespace App\Http\Controllers\AdminAuth;
 
 use App\Http\Controllers\Controller;
 use Auth;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Foundation\Auth\RedirectsUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Http\Request;
@@ -33,6 +35,7 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
+
     /**
      * Where to redirect users after login.
      *
@@ -41,14 +44,14 @@ class LoginController extends Controller
     protected $redirectTo = '/admin/home';
 
     /**
-     * Where to redirect to when logging out
+     * Where to redirect to when logging out.
      *
      * @var string
      */
     protected $redirectAfterLogout = '/admin/login';
 
     /**
-     * Current Controller Guard
+     * Current Controller Guard.
      *
      * @var string
      */
@@ -56,22 +59,10 @@ class LoginController extends Controller
 
     /**
      * Create a new controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {
-        $this->middleware('guest:'. $this->getGuard())->except('logout');
-    }
-
-    /**
-     * Get the guard to be used during authentication.
-     *
-     * @return string|null
-     */
-    protected function getGuard()
-    {
-        return property_exists($this, 'guard') ? $this->guard : null;
+        $this->middleware('guest:' . $this->getGuard())->except('logout');
     }
 
     /**
@@ -93,16 +84,18 @@ class LoginController extends Controller
     {
         Auth::guard($this->getGuard())->logout();
 
-        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
+        return redirect(\property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
     }
 
     /**
      * Handle a login request to the application.
      *
      * @param Request $request
-     * @return \Illuminate\Http\Response|void
+     *
      * @throws ValidationException
      * @throws \Illuminate\Validation\ValidationException
+     *
+     * @return \Illuminate\Http\Response|void
      */
     public function login(Request $request)
     {
@@ -130,17 +123,53 @@ class LoginController extends Controller
     }
 
     /**
+     * Get the login username to be used by the controller.
+     *
+     * @return string
+     */
+    public function username()
+    {
+        return 'email';
+    }
+
+    /**
+     * Log the user out of the application.
+     *
+     * @param Request $request
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+
+        $request->session()->invalidate();
+
+        return redirect('/');
+    }
+
+    /**
+     * Get the guard to be used during authentication.
+     *
+     * @return null|string
+     */
+    protected function getGuard()
+    {
+        return \property_exists($this, 'guard') ? $this->guard : null;
+    }
+
+    /**
      * Validate the user login request.
      *
      * @param Request $request
-     * @return void
+     *
      * @throws ValidationException
      */
     protected function validateLogin(Request $request)
     {
         $this->validate($request, [
             $this->username() => 'required|string',
-            'password' => 'required|string',
+            'password'        => 'required|string',
         ]);
     }
 
@@ -148,6 +177,7 @@ class LoginController extends Controller
      * Attempt to log the user into the application.
      *
      * @param Request $request
+     *
      * @return bool
      */
     protected function attemptLogin(Request $request)
@@ -162,6 +192,7 @@ class LoginController extends Controller
      * Get the needed authorization credentials from the request.
      *
      * @param Request $request
+     *
      * @return array
      */
     protected function credentials(Request $request)
@@ -173,6 +204,7 @@ class LoginController extends Controller
      * Send the response after the user was authenticated.
      *
      * @param Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     protected function sendLoginResponse(Request $request)
@@ -187,39 +219,12 @@ class LoginController extends Controller
 
     /**
      * Get the failed login response instance.
-     *
-     * @return void
      */
     protected function sendFailedLoginResponse()
     {
         throw ValidationException::withMessages([
             $this->username() => [trans('auth.failed')],
         ]);
-    }
-
-    /**
-     * Get the login username to be used by the controller.
-     *
-     * @return string
-     */
-    public function username()
-    {
-        return 'email';
-    }
-
-    /**
-     * Log the user out of the application.
-     *
-     * @param Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function logout(Request $request)
-    {
-        $this->guard()->logout();
-
-        $request->session()->invalidate();
-
-        return redirect('/');
     }
 
     /**

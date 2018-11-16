@@ -1,24 +1,26 @@
 <?php
 /**
- * ClientManager
+ * ClientManager.
  *
  * @file User.php
  * @project ClientManager
+ *
  * @author Wayne Brummer
  */
 
 /**
- * ClientManager
+ * ClientManager.
  *
  * @file User.php
  * @project ClientManager
+ *
  * @author Wayne Brummer
  */
 
 namespace App;
 
+use Illuminate\Foundation\Auth\User as Authenticatable;
     use Illuminate\Notifications\Notifiable;
-    use Illuminate\Foundation\Auth\User as Authenticatable;
 
     class User extends Authenticatable
     {
@@ -52,7 +54,7 @@ namespace App;
         ];
 
         /**
-         * User will have many companies
+         * User will have many companies.
          *
          * @return \Illuminate\Database\Eloquent\Relations\HasMany
          */

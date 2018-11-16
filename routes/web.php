@@ -1,9 +1,10 @@
 <?php
 /**
- * ClientManager
+ * ClientManager.
  *
  * @file web.php
  * @project ClientManager
+ *
  * @author Wayne Brummer
  */
 

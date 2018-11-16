@@ -1,11 +1,14 @@
 <?php
 /**
- * ClientManager
+ * ClientManager.
  *
  * @file RegisterController.php
  * @project ClientManager
+ *
  * @author Wayne Brummer <wayne@bru-tech.co.za>
+ *
  * @category UserAuths
+ *
  * @license WayneBrummer BruTech
  */
 

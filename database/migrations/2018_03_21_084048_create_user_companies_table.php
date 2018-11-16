@@ -1,15 +1,15 @@
 <?php
-    /**
-     * ClientManager.
-     *
-     * @project ClientManager
-     * @description
-     * @author Wayne Brummer
-     */
-
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
+/**
+ * ClientManager.
+ *
+ * @project ClientManager
+ * @description
+ *
+ * @author Wayne Brummer
+ */
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateUserCompaniesTable extends Migration
 {

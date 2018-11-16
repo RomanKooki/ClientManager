@@ -1,9 +1,10 @@
 <?php
 /**
- * ClientManager
+ * ClientManager.
  *
  * @file UserCompany.php
  * @project ClientManager
+ *
  * @author Wayne Brummer
  */
 
@@ -32,6 +33,5 @@ class UserCompany extends Model
      * @var array
      */
     protected $hidden = [
-
     ];
 }

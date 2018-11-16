@@ -1,17 +1,19 @@
 <?php
 /**
- * ClientManager
+ * ClientManager.
  *
  * @file Company.php
  * @project ClientManager
+ *
  * @author Wayne Brummer
  */
 
 /**
- * ClientManager
+ * ClientManager.
  *
  * @file Company.php
  * @project ClientManager
+ *
  * @author Wayne Brummer
  */
 
@@ -21,8 +23,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Company
- * @package App
+ * Class Company.
  */
 class Company extends Model
 {
@@ -52,6 +53,5 @@ class Company extends Model
      * @var array
      */
     protected $hidden = [
-
     ];
 }

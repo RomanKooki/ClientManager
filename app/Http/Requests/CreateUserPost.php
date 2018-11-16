@@ -1,11 +1,14 @@
 <?php
 /**
- * ClientManager
+ * ClientManager.
  *
  * @file CreateUserPost.php
  * @project ClientManager
+ *
  * @author Wayne Brummer <wayne@bru-tech.co.za>
+ *
  * @category UserAuths
+ *
  * @license WayneBrummer BruTech
  */
 
@@ -33,12 +36,12 @@ class CreateUserPost extends FormRequest
     public function rules()
     {
         return [
-          'name' => 'required',
-          'address' => 'required',
-          'contact' => 'required',
-          'id_number' => 'required',
-          'email' => 'required',
-//            'password' => 'required',
+            'name'      => 'required',
+            'address'   => 'required',
+            'contact'   => 'required',
+            'id_number' => 'required',
+            'email'     => 'required',
+            //            'password' => 'required',
         ];
     }
 }

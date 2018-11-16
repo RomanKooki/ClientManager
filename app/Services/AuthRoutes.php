@@ -1,17 +1,19 @@
 <?php
 /**
- * ClientManager
+ * ClientManager.
  *
  * @file AuthRoutes.php
  * @project ClientManager
+ *
  * @author Wayne Brummer
  */
 
 /**
- * ClientManager
+ * ClientManager.
  *
  * @file AuthRoutes.php
  * @project ClientManager
+ *
  * @author Wayne Brummer
  */
 
@@ -21,18 +23,13 @@ use Route;
 
 class AuthRoutes
 {
-
-
     /**
      * Routes containing User Registration / Login And Password Reset.
-     *
      */
     public static function UserRoutes()
     {
-
         Route::group(['prefix' => 'user'], function () {
             Route::name('user.')->group(function () {
-
                 //Register section
                 Route::get('/register', 'UserAuth\RegisterController@showRegistrationForm')
                     ->name('register');
@@ -68,7 +65,6 @@ class AuthRoutes
 
     public static function AdminRoutes()
     {
-
         Route::group(['prefix' => 'admin'], function () {
             Route::name('admin.')->group(function () {
                 //Login Section
@@ -89,9 +85,7 @@ class AuthRoutes
                     Route::get('companies', 'Admin\CompaniesController@index')->name('companies.index');
 //                    Route::get('companies/edit', 'Admin\CompaniesController@edit')->name('companies.edit');
                 });
-
             });
         });
     }
-
 }

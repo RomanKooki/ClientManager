@@ -1,20 +1,22 @@
 <?php
 /**
- * ClientManager
+ * ClientManager.
  *
  * @file CompaniesController.php
  * @project ClientManager
+ *
  * @author Wayne Brummer <wayne@bru-tech.co.za>
+ *
  * @category UserAuths
+ *
  * @license WayneBrummer BruTech
  */
 
 namespace App\Http\Controllers\Api;
 
 use App\Company;
-use App\UserCompany;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class CompaniesController extends Controller
 {
@@ -31,7 +33,8 @@ class CompaniesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return Company|\Illuminate\Database\Eloquent\Model
      */
     public function store(Request $request)
@@ -42,7 +45,8 @@ class CompaniesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model
      */
     public function show($id)
@@ -53,8 +57,9 @@ class CompaniesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
+     * @param \Illuminate\Http\Request $request
+     * @param int                      $id
+     *
      * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|\Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -69,13 +74,16 @@ class CompaniesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     *
      * @throws \Exception
+     *
+     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         Company::findOrFail($id)->delete();
+
         return response([], 200);
     }
 }

@@ -1,31 +1,33 @@
 <?php
 /**
- * ClientManager
+ * ClientManager.
  *
  * @file 2018_03_21_082600_create_company_table.php
  * @project ClientManager
+ *
  * @author Wayne Brummer
  */
 
 /**
- * ClientManager
+ * ClientManager.
  *
  * @file 2018_03_21_082600_create_company_table.php
  * @project ClientManager
+ *
  * @author Wayne Brummer
  */
 
-    /**
-     * ClientManager.
-     *
-     * @project ClientManager
-     * @description
-     * @author Wayne Brummer
-     */
-
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
+/**
+ * ClientManager.
+ *
+ * @project ClientManager
+ * @description
+ *
+ * @author Wayne Brummer
+ */
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateCompanyTable extends Migration
 {

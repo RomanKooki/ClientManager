@@ -1,21 +1,21 @@
 <?php
 /**
- * ClientManager
+ * ClientManager.
  *
  * @file api.php
  * @project ClientManager
+ *
  * @author Wayne Brummer
  */
 
 /**
- * ClientManager
+ * ClientManager.
  *
  * @file api.php
  * @project ClientManager
+ *
  * @author Wayne Brummer
  */
-
-use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +31,6 @@ use Illuminate\Http\Request;
 Route::group(['prefix' => '/v1', 'as' => 'admin.'], function () {
     Route::resource('companies', 'Api\CompaniesController', ['except' => ['create', 'edit']]);
 });
-
 
 Route::group(['prefix' => '/v1', 'as' => 'user.'], function () {
     Route::get('companies/link/{company_id}', 'Api\CompaniesController@link');
