@@ -7,7 +7,6 @@
  * @author Wayne Brummer <wayne@bru-tech.co.za>
  * @category UserAuths
  * @license WayneBrummer BruTech
- *
  */
 
 namespace App\Http\Controllers\UserAuth;

@@ -2,19 +2,13 @@
 /**
  * ClientManager
  *
- * @file CompaniesController.php
+ * @file CompaniesContraller.php
  * @project ClientManager
- * @author Wayne Brummer
+ * @author Wayne Brummer <wayne@bru-tech.co.za>
+ * @category UserAuths
+ * @license WayneBrummer BruTech
  */
 
-/**
- * ClientManager
- *
- * @file CompaniesController.php
- * @project ClientManager
- * @author Wayne Brummer
- *
- */
 
 
 namespace App\Http\Controllers\Admin;

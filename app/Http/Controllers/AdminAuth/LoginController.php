@@ -4,18 +4,10 @@
  *
  * @file LoginController.php
  * @project ClientManager
- * @author Wayne Brummer
+ * @author Wayne Brummer <wayne@bru-tech.co.za>
+ * @category UserAuths
+ * @license WayneBrummer BruTech
  */
-
-/**
- * ClientManager
- *
- * @file LoginController.php
- * @project ClientManager
- * @author Wayne Brummer
- */
-
-
 
 namespace App\Http\Controllers\AdminAuth;
 
@@ -140,12 +132,13 @@ class LoginController extends Controller
         return $this->sendFailedLoginResponse($request);
     }
 
-    /**
-     * Validate the user login request.
-     *
-     * @param Request $request
-     * @return void
-     */
+  /**
+   * Validate the user login request.
+   *
+   * @param Request $request
+   * @return void
+   * @throws ValidationException
+   */
     protected function validateLogin(Request $request)
     {
         $this->validate($request, [
@@ -195,26 +188,11 @@ class LoginController extends Controller
     }
 
     /**
-     * The user has been authenticated.
-     *
-     * @param Request $request
-     * @param  mixed $user
-     * @return mixed
-     */
-    protected function authenticated(Request $request, $user)
-    {
-        //
-    }
-
-    /**
      * Get the failed login response instance.
      *
-     * @param Request $request
      * @return void
-     *
-     * @throws ValidationException
      */
-    protected function sendFailedLoginResponse(Request $request)
+    protected function sendFailedLoginResponse()
     {
         throw ValidationException::withMessages([
             $this->username() => [trans('auth.failed')],

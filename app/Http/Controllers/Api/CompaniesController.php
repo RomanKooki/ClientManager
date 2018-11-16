@@ -4,32 +4,11 @@
  *
  * @file CompaniesController.php
  * @project ClientManager
- * @author Wayne Brummer
+ * @author Wayne Brummer <wayne@bru-tech.co.za>
+ * @category UserAuths
+ * @license WayneBrummer BruTech
  */
 
-/**
- * ClientManager
- *
- * @file CompaniesController.php
- * @project ClientManager
- * @author Wayne Brummer
- */
-
-/**
- * ClientManager
- *
- * @file CompaniesController.php
- * @project ClientManager
- * @author Wayne Brummer
- */
-
-/**
- * ClientManager
- *
- * @file CompaniesController.php
- * @project ClientManager
- * @author Wayne Brummer
- */
 
 namespace App\Http\Controllers\Api;
 
@@ -58,8 +37,7 @@ class CompaniesController extends Controller
      */
     public function store(Request $request)
     {
-        $company = Company::create($request->all());
-        return $company;
+        return Company::create($request->all());
     }
 
     /**
@@ -98,8 +76,7 @@ class CompaniesController extends Controller
      */
     public function destroy($id)
     {
-        $company = Company::findOrFail($id);
-        $company->delete();
-        return '';
+        Company::findOrFail($id)->delete();
+        return response([], 200);
     }
 }
