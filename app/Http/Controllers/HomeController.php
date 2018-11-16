@@ -1,8 +1,15 @@
 <?php
+/**
+ * ClientManager
+ *
+ * @file HomeController.php
+ * @project ClientManager
+ * @author Wayne Brummer <wayne@bru-tech.co.za>
+ * @category ..
+ * @license WayneBrummer BruTech
+ */
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {

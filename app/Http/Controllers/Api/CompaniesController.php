@@ -9,7 +9,6 @@
  * @license WayneBrummer BruTech
  */
 
-
 namespace App\Http\Controllers\Api;
 
 use App\Company;
@@ -54,8 +53,8 @@ class CompaniesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model|\Illuminate\Http\Response
      */
     public function update(Request $request, $id)

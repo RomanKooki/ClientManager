@@ -4,7 +4,9 @@
  *
  * @file UpdateUserPost.php
  * @project ClientManager
- * @author Wayne Brummer
+ * @author Wayne Brummer <wayne@bru-tech.co.za>
+ * @category UserAuths
+ * @license WayneBrummer BruTech
  */
 
 namespace App\Http\Requests;
@@ -31,11 +33,11 @@ class UpdateUserPost extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'address' => 'required',
-            'contact' => 'required',
-            'id_number' => 'required',
-            'email' => 'required',
+          'name' => 'required',
+          'address' => 'required',
+          'contact' => 'required',
+          'id_number' => 'required',
+          'email' => 'required',
         ];
     }
 }

@@ -91,11 +91,9 @@ class LoginController extends Controller
      */
     public function handleLogout()
     {
-
         Auth::guard($this->getGuard())->logout();
 
         return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
-
     }
 
     /**
@@ -108,7 +106,6 @@ class LoginController extends Controller
      */
     public function login(Request $request)
     {
-
         $this->validateLogin($request);
 
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
@@ -132,13 +129,13 @@ class LoginController extends Controller
         return $this->sendFailedLoginResponse($request);
     }
 
-  /**
-   * Validate the user login request.
-   *
-   * @param Request $request
-   * @return void
-   * @throws ValidationException
-   */
+    /**
+     * Validate the user login request.
+     *
+     * @param Request $request
+     * @return void
+     * @throws ValidationException
+     */
     protected function validateLogin(Request $request)
     {
         $this->validate($request, [
@@ -156,7 +153,8 @@ class LoginController extends Controller
     protected function attemptLogin(Request $request)
     {
         return $this->guard()->attempt(
-            $this->credentials($request), $request->filled('remember')
+            $this->credentials($request),
+            $request->filled('remember')
         );
     }
 
@@ -233,5 +231,4 @@ class LoginController extends Controller
     {
         return Auth::guard('admin');
     }
-
 }

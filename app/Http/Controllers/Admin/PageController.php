@@ -4,16 +4,11 @@
  *
  * @file PageController.php
  * @project ClientManager
- * @author Wayne Brummer
+ * @author Wayne Brummer <wayne@bru-tech.co.za>
+ * @category User Auths
+ * @license WayneBrummer BruTech
  */
 
-/**
- * ClientManager
- *
- * @file PageController.php
- * @project ClientManager
- * @author Wayne Brummer
- */
 
 namespace App\Http\Controllers\Admin;
 

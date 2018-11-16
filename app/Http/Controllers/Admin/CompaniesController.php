@@ -5,19 +5,13 @@
  * @file CompaniesContraller.php
  * @project ClientManager
  * @author Wayne Brummer <wayne@bru-tech.co.za>
- * @category UserAuths
+ * @category User Auths
  * @license WayneBrummer BruTech
  */
-
-
-
 namespace App\Http\Controllers\Admin;
 
 use App\Company;
 use App\Http\Controllers\Controller;
-use App\Services\Admin\UserService;
-use App\User;
-use Illuminate\Http\Request;
 
 class CompaniesController extends Controller
 {
