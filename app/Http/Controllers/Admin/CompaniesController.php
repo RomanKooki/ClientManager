@@ -2,12 +2,11 @@
 /**
  * ClientManager.
  *
- * @file CompaniesContraller.php
- * @project ClientManager
+ * @category PHP
  *
  * @author Wayne Brummer <wayne@bru-tech.co.za>
- *
- * @category User Auths
+ * @file CompaniesContraller.php
+ * @project ClientManager
  *
  * @license WayneBrummer BruTech
  */
@@ -17,6 +16,10 @@ namespace App\Http\Controllers\Admin;
 use App\Company;
 use App\Http\Controllers\Controller;
 
+/**
+ * CompaniesController
+ * Best possible solutions.
+ */
 class CompaniesController extends Controller
 {
     /**
