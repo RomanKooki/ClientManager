@@ -171,8 +171,8 @@ class LoginController extends Controller
     protected function validateLogin(Request $request)
     {
         $this->validate($request, [
-            $this->username() => 'required|string',
-            'password'        => 'required|string',
+          $this->username() => 'required|string',
+          'password' => 'required|string',
         ]);
     }
 
@@ -187,7 +187,7 @@ class LoginController extends Controller
     {
         return $this->guard()->attempt(
           $this->credentials($request),
-            $request->filled('remember')
+          $request->filled('remember')
         );
     }
 
@@ -223,13 +223,11 @@ class LoginController extends Controller
     /**
      * The user has been authenticated.
      *
-     * @param Request $request
-     * @param mixed   $user
-     *
-     * @return mixed
+     * @return bool
      */
-    protected function authenticated(Request $request, $user)
+    protected function authenticated()
     {
+        return true;
     }
 
     /**
@@ -244,7 +242,7 @@ class LoginController extends Controller
     protected function sendFailedLoginResponse(Request $request)
     {
         throw ValidationException::withMessages([
-            $this->username() => [trans('auth.failed')],
+          $this->username() => [trans('auth.failed')],
         ]);
     }
 
