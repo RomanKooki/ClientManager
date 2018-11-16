@@ -3,13 +3,21 @@ os:
 
 language: php
 
+# Run on container environment (needed for trais caching feature)
+sudo: false
+
 php:
   - '7.1'
+
+# Cache composer files for faster test times
+cache:
+  directories:
+    - vendor
+    - $HOME/.composer/cache
 
 before_script:
   - cp .env.travis .env
   - composer self-update
-  - composer install --prefer-source --no-interaction --dev
   - php artisan key:generate
   - pear install pear/PHP_CodeSniffer
   - phpenv rehash
@@ -18,11 +26,14 @@ before_script:
   - npm install -g jshint
   - npm install
 
+install:
+  - composer install --no-interaction --prefer-dist
+
 script:
   - vendor/bin/phpunit --coverage-text
   - phpcs --ignore=app/Http/Controllers/Auth,app/Http/Controllers/Controller.php app/Http/Controllers
 #  - npm run production
 #  - jshint resources/assets/js/modules/*
-
+  - composer test
 notifications:
   email: false
