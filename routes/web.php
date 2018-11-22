@@ -1,13 +1,4 @@
 <?php
-/**
- * ClientManager.
- *
- * @file web.php
- * @project ClientManager
- *
- * @author Wayne Brummer
- */
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes

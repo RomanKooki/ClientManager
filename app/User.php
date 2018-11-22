@@ -22,7 +22,17 @@ namespace App;
 use Illuminate\Foundation\Auth\User as Authenticatable;
     use Illuminate\Notifications\Notifiable;
 
-    class User extends Authenticatable
+/**
+ * App\User
+ *
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\UserCompany[] $companies
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User query()
+ * @mixin \Eloquent
+ */
+class User extends Authenticatable
     {
         use Notifiable;
 

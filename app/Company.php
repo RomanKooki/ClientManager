@@ -24,6 +24,16 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Company.
+ *
+ * @method static bool|null forceDelete()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Company newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Company newQuery()
+ * @method static \Illuminate\Database\Query\Builder|\App\Company onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Company query()
+ * @method static bool|null restore()
+ * @method static \Illuminate\Database\Query\Builder|\App\Company withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\App\Company withoutTrashed()
+ * @mixin \Eloquent
  */
 class Company extends Model
 {

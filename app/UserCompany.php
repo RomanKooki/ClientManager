@@ -12,6 +12,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\UserCompany
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\UserCompany newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\UserCompany newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\UserCompany query()
+ * @mixin \Eloquent
+ */
 class UserCompany extends Model
 {
     /**

@@ -25,7 +25,7 @@
         "@fortawesome/fontawesome": "^1.1.4",
         "bootstrap-vue": "^2.0.0-rc.2",
         "font-awesome": "^4.7.0",
-        "npm": "^5.7.1",
+      "npm": "^6.4.1",
         "vue-router": "^3.0.1"
     }
 }

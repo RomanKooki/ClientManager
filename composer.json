@@ -17,13 +17,14 @@
   "require-dev": {
     "barryvdh/laravel-debugbar": "^3.1",
     "barryvdh/laravel-ide-helper": "^2.4",
+    "doctrine/dbal": "^2.8",
     "filp/whoops": "^2.0",
+    "friendsofphp/php-cs-fixer": "^2.13",
     "fzaninotto/faker": "^1.4",
     "mockery/mockery": "^1.0",
     "nunomaduro/collision": "^2.0",
-    "phpunit/phpunit": "^7.0",
-    "friendsofphp/php-cs-fixer": "^2.13",
-    "phpstan/phpstan": "^0.10.3"
+    "phpstan/phpstan": "^0.10.3",
+    "phpunit/phpunit": "^7.0"
   },
   "autoload": {
     "classmap": [
