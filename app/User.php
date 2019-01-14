@@ -33,7 +33,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @mixin \Eloquent
  */
 class User extends Authenticatable
-    {
+{
         use Notifiable;
 
         /**
@@ -41,7 +41,7 @@ class User extends Authenticatable
          *
          * @var array
          */
-        protected $fillable = [
+    protected $fillable = [
             'name',
             'email',
             'password',
@@ -58,7 +58,7 @@ class User extends Authenticatable
          *
          * @var array
          */
-        protected $hidden = [
+    protected $hidden = [
             'password',
             'remember_token',
         ];
@@ -68,8 +68,8 @@ class User extends Authenticatable
          *
          * @return \Illuminate\Database\Eloquent\Relations\HasMany
          */
-        public function companies()
-        {
-            return $this->hasMany('App\UserCompany');
-        }
+    public function companies()
+    {
+        return $this->hasMany('App\UserCompany');
     }
+}

@@ -8,15 +8,6 @@
  * @author Wayne Brummer
  */
 
-/**
- * ClientManager.
- *
- * @file api.php
- * @project ClientManager
- *
- * @author Wayne Brummer
- */
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
