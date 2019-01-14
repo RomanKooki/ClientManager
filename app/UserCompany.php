@@ -28,11 +28,11 @@ class UserCompany extends Model
      * @var array
      */
     protected $fillable = [
-        'address',
-        'website',
-        'contact',
-        'image_url',
-        'is_active',
+      'address',
+      'website',
+      'contact',
+      'image_url',
+      'is_active',
     ];
 
     /**
