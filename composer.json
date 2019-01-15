@@ -8,7 +8,7 @@
   "license": "MIT",
   "type": "project",
   "require": {
-    "php": "^7.1.3",
+    "php": "^7.2.9",
     "fideloper/proxy": "^4.0",
     "laravel/framework": "5.7.*",
     "laravel/tinker": "^1.0",
@@ -23,6 +23,7 @@
     "fzaninotto/faker": "^1.4",
     "mockery/mockery": "^1.0",
     "nunomaduro/collision": "^2.0",
+    "nunomaduro/larastan": "^0.3.13",
     "phpstan/phpstan": "^0.10.3",
     "phpunit/phpunit": "^7.0"
   },
@@ -52,8 +53,8 @@
       "@phpstan",
       "@php-cs-fixer"
     ],
-    "phpstan": "phpstan analyse --level max src/ tests/",
-    "php-cs-fixer": "php-cs-fixer fix --dry-run --diff --verbose --rules @PSR2 app/",
+    "phpstan": "phpstan analyse --autoload-file=_ide_helper.php --level max app/ tests/",
+    "php-cs-fixer": "php-cs-fixer fix --dry-run --diff --verbose --rules @PSR2 app/ test/",
     "post-root-package-install": [
       "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
     ],

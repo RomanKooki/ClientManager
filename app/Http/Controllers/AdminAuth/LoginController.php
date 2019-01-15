@@ -19,6 +19,7 @@ use Auth;
 use Illuminate\Foundation\Auth\RedirectsUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View as ViewAlias;
 use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
@@ -68,7 +69,7 @@ class LoginController extends Controller
     /**
      * Show the application's login form.
      *
-     * @return \Illuminate\Http\Response
+     * @return ViewAlias
      */
     public function showLoginForm()
     {

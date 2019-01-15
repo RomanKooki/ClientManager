@@ -35,7 +35,7 @@ class UserCompany extends Model
       'is_active',
     ];
 
-    /**
+    /**c
      * The attributes that should be hidden for arrays.
      *
      * @var array

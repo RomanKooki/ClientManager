@@ -3,7 +3,7 @@
 namespace Tests;
 
 use Illuminate\Contracts\Console\Kernel;
-use Illuminate\Support\Facades\Hash;
+use Hash as HashAlias;
 
 trait CreatesApplication
 {
@@ -18,7 +18,7 @@ trait CreatesApplication
 
         $app->make(Kernel::class)->bootstrap();
 
-        Hash::driver('bcrypt')->setRounds(4);
+        HashAlias::driver('bcrypt')->setRounds(4);
 
         return $app;
     }
